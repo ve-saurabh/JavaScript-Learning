@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function asyncFunc(){
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(()=>{
+        //             console.log("I am a promise")
+        //             resolve(200);
+        //         }, 2000)
+        //     })
+        // }
+
+        // console.log("returning a promise");
+        // asyncFunc().then((res)=>{
+        //     console.log(res);
+        //     return asyncFunc();
+        // }).then((res)=>{
+        //     console.log(res)
+        // })
+
+        // ---------------------------------------------------------------->
+        function asyncFunc1(dataId){
+            return new Promise((resolve, reject) => {
+                setTimeout(()=> {
+                    console.log("getting data1...", dataId);
+                }, 3000);
+                if(dataId){
+                    resolve(200);
+                }
+                else{
+                    reject(130);
+                }
+            });
+        };
+
+        function asyncFunc2(dataId){
+            return new Promise((resolve, reject) => {
+                setTimeout(()=> {
+                    console.log("getting data2...", dataId);
+                }, 3000);
+                if(dataId){
+                    resolve(200);
+                }
+                else{
+                    reject(130);
+                }
+            });
+        };
+
+        asyncFunc1(100).then(()=> {
+            console.log("fetching data.....");
+            return asyncFunc2(200);
+        }).then(()=>{
+            console.log("fetching data....");
+        })
+    </script>
+</body>
+</html>

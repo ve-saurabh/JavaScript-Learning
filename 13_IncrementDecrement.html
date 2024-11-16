@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <label for="" id="label">0</label>
+    <div>
+        <button id="increment">+</button>
+        <button id="decrement">-</button>
+        <button id="rst">reset</button>
+    </div>
+
+    <script>
+        let label = document.getElementById('label');
+        let inc = document.getElementById('increment');
+        let dec = document.getElementById('decrement');
+        let rst = document.getElementById('rst');
+        let count = 0;
+
+        inc.addEventListener('click', ()=>{
+            label.innerHTML = ++count;
+        })
+        dec.addEventListener('click', ()=>{
+            label.innerHTML = --count;
+        })
+        rst.addEventListener('click', ()=>{
+            label.innerHTML = 0;
+        })
+    </script>
+</body>
+</html>

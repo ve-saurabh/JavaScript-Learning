@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let promise = new Promise((resolve, reject) => {
+        //     console.log("I am a promise");
+        //     resolve("Success");
+        // })
+
+        // let promise = new Promise((resolve, reject) => {
+        //     console.log("I am a promise");
+        //     reject("Not Success");
+        // })
+
+        // -------------------------------------------------------------------->
+        // function getData(dataId){
+        //     return new Promise((resolve, reject)=>{
+        //         setTimeout(()=>{
+        //             console.log("data id", dataId);
+        //             resolve("Success");
+        //             if(dataId){
+        //                 console.log("Success");
+        //             }
+        //         }, 5000)
+        //     })
+        // }
+        // -------------------------------------------------------------------->
+        // const getPromise = (status)=>{
+        //     return new Promise((resolve, reject) => {
+        //         console.log("I am a promise");
+
+        //         if(status == "Success"){
+        //             resolve("promise fulfilled")
+        //         }
+        //         else if(status != "Success"){
+        //             reject("promise not fulfilled")
+        //         }
+        //         else {
+        //             reject("Invalid")
+        //         }
+        //     })
+        // }
+        // let prom = getPromise("Success");
+        // prom.then((res)=>{
+        //     console.log("fulfilled", res);
+        // })
+
+        // prom.catch((err) => {
+        //     console.log(err);
+        // })
+
+        // -------------------------------------------------------------------->
+        let promise = new Promise((resolve, reject) => {
+            console.log("getting promise....");
+            // resolve(200);
+            reject(130);
+        })
+
+        promise.then((res)=>{
+            console.log(res);
+        })
+
+        promise.catch((err)=>{
+            console.log("Eror:",err);
+        })
+     </script>
+</body>
+</html>

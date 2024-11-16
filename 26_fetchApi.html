@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="dogId"></h1>
+    <button id="btn">Get Data</button>
+    <script>
+        // const URL = "https://cataas.com/api/cats?tags=cute"
+        // let promise = fetch(URL);
+        // console.log(promise);
+
+        let dogId = document.getElementById("dogId");
+        // Using Async-Await
+        const URL = "https://cataas.com/api/cats?tags=cute"
+        const getData = async () => {
+            console.log("getting data...");
+            let response = await fetch(URL);
+            console.log(response);
+            let data = await response.json();
+            console.log(data[0]._id);  
+            dogId.innerHTML = data[0]._id;          
+        }
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", getData);
+
+
+        // ---------------------------------------------------------> Using Promise Chaining
+        // function getFacts(){
+        //     fetch(URL)
+        //         .then((response) => {
+        //             return response.json();
+        //         })
+        //         .then((data) => {
+        //             console.log(data);
+        //         })
+        // }
+    </script>
+</body>
+</html>

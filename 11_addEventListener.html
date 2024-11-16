@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        div {
+            height: 300px;
+            width: 350px;
+            border: 1px solid black;
+            transition: 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis optio quod in facilis aspernatur ea
+            aliquam commodi quibusdam? Odio aut sunt culpa accusantium, consectetur debitis ab aspernatur. Cupiditate
+            debitis maiores at laboriosam harum, non eaque asperiores aspernatur enim consectetur tenetur rerum quia
+            illum ad voluptate unde dolores eligendi quisquam rem ipsa consequuntur quam aliquam! Illum voluptatibus
+            blanditiis ratione incidunt consequuntur harum dicta reiciendis sequi architecto magni, quae eos omnis totam
+            et ea placeat autem sit dolor enim, voluptatum quidem eligendi, aliquam cupiditate! Fugiat modi quos
+            expedita beatae natus magnam reiciendis eveniet quia, iste doloremque pariatur eligendi ipsum repudiandae
+            ducimus voluptate.</p>
+    </div>
+    <form action="">
+        <label for="">Select bgColor</label>
+        <input type="color" id="bgclr">
+        <label for="">Select txtColor</label>
+        <input type="color" id="txtclr">
+        <button id="btn">Apply theme</button>
+    </form>
+
+    <script>
+        let div = document.getElementById('div');
+        let bgclr = document.getElementById('bgclr');
+        let txtclr = document.getElementById('txtclr');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            console.log(bgclr.value, txtclr.value);
+            div.style.backgroundColor = bgclr.value;
+            div.style.color = txtclr.value;
+        })
+    </script>
+</body>
+
+</html>

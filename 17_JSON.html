@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Details of Students</h1>
+    <div id="root"></div>
+    <script>
+        // let jdata = '[{"name":"vinit", "age":22, "email":"vinit@gmail.com"}]'
+        // let jsdata = JSON.parse(jdata);         // in javascript object format
+        // console.log(jsdata);
+        // console.log(JSON.stringify(jsdata));     // in json format
+
+
+        // fetch('./17_data.json')
+        // .then((res)=>{return res.json()})
+        // .then((result)=>{console.log(result)})        // this will be in array of object format
+        // .catch(()=>{console.log('failed to fetch data. Check with link or internet connectivity')})
+
+
+        fetch('./17_data.json')
+        .then((res)=>{return res.json()})
+        .then((result)=>displayData(result))
+        .catch(()=>{console.log('failed to fetch data. Check with link or internet connectivity')})
+
+        let div = document.getElementById('root');
+        let displayData = data => {
+            console.log(data);
+            data.forEach(element => {
+                div.innerHTML += `<h2>name: ${element.name}</h2>`
+            });
+        }
+    </script>
+</body>
+</html>

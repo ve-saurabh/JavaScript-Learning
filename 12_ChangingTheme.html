@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        div{
+            padding: 10px;
+            height: 330px;
+            width: 350px;
+            border: 1px solid black;
+            transition: 1s ease-in;
+        }
+        button{
+            transition: 1s ease-in;
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis optio quod in facilis aspernatur ea
+            aliquam commodi quibusdam? Odio aut sunt culpa accusantium, consectetur debitis ab aspernatur. Cupiditate
+            debitis maiores at laboriosam harum, non eaque asperiores aspernatur enim consectetur tenetur rerum quia
+            illum ad voluptate unde dolores eligendi quisquam rem ipsa consequuntur quam aliquam! Illum voluptatibus
+            blanditiis ratione incidunt consequuntur harum dicta reiciendis sequi architecto magni, quae eos omnis totam
+            et ea placeat autem sit dolor enim, voluptatum quidem eligendi, aliquam cupiditate! Fugiat modi quos
+            expedita beatae natus magnam reiciendis eveniet quia, iste doloremque pariatur eligendi ipsum repudiandae
+            ducimus voluptate.</p>
+    </div>
+    <button id="btn">Dark Theme</button>
+
+    <script>
+        let div = document.getElementById('div');
+        let btn = document.getElementById('btn');
+        let theme = 'light';
+
+        btn.addEventListener('click', ()=>{
+            if(theme== 'light'){
+                div.style.backgroundColor = 'black';
+                div.style.color = 'white';
+                theme = 'dark';
+                btn.innerText = 'Light Theme';
+                btn.style.backgroundColor = 'white';
+                btn.style.color = 'black';
+            }
+            else{
+                div.style.backgroundColor = 'white';
+                div.style.color = 'black';
+                theme = 'light';
+                btn.innerText = 'Dark Theme';
+                btn.style.backgroundColor = 'black';
+                btn.style.color = 'white';
+            }
+        })
+    </script>
+</body>
+</html>

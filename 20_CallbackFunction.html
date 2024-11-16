@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Callback Function</h1>
+    <p>Callback function is a function which is passed as an argument to another function.</p>
+    <p>callback function is used in asynchronous programming, where certain tasks take time and callback function will run after task finishes.</p>
+    <script>
+        function fetchdata(callback){
+            console.log('Fetching data');
+            setTimeout(() => {
+                callback();
+            }, 2000);
+        }
+        function displayData(){
+            console.log("displaying data");
+        }
+        fetchdata(displayData);
+
+
+        function sum(a,b){
+            console.log(a+b);
+        }
+        function calculator(a,b,callback){
+            callback(a,b);
+        }
+        calculator(5,5,sum);
+    </script>
+</body>
+</html>

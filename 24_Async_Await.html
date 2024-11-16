@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (async function hello(){
+        //     console.log("Hello");
+        // })();
+
+
+    // function getData(dataId){
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(()=>{
+    //             console.log("dataId", dataId);
+    //             resolve(200);
+    //         }, 2000);
+    //     });
+    // };
+
+    // (async function getAllData(){
+    //     console.log("getting data1...");
+    //     await getData(1);
+    //     console.log("getting data2...");
+    //     await getData(2);
+    // })();
+
+
+    function getData(dataId, getNextData){
+        return new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                console.log("dataId", dataId);
+                if(getNextData){
+                    getNextData();
+                }
+                resolve(200);
+            }, 2000)
+        });
+    };
+
+    async function getAllData(){
+        await getData(1, async ()=>{
+           await getData(2);
+        })
+    }
+
+    </script>
+</body>
+</html>

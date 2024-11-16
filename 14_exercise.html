@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column; 
+        }
+        div{
+            padding: 10px;
+            height: 300px;
+            width: 400px;
+            border: 1px solid black;
+            overflow: scroll;
+            transition: 1s ease-in;
+            text-align: justify;
+        }
+        button{
+            height: 50px;
+            width: 180px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgb(46, 44, 44);
+            color: white;
+            transition: 1s ease-in;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet vero quas cumque ducimus provident, quidem
+            optio sint dolorem, quos quibusdam fugit fuga aliquam maiores ab! Voluptas nulla atque nostrum perspiciatis?
+            Esse perferendis, explicabo asperiores debitis facilis tempora eius saepe facere dolorum nemo sunt, tempore
+            a natus minus maxime cum perspiciatis totam illo recusandae at? Consectetur excepturi, quam minus vero
+            delectus explicabo magnam esse amet, libero voluptates deserunt, a dicta quas ex est id ut nulla. Delectus
+            consequatur assumenda ab unde facere quam quos dicta tempore voluptas iusto deleniti dolore neque, itaque
+            voluptates placeat provident hic rem commodi doloremque. Doloribus consectetur quaerat aut totam sapiente
+            hic esse amet adipisci iure atque impedit ea iste enim distinctio a dicta fuga expedita non perspiciatis,
+            commodi magni at. Suscipit obcaecati voluptatibus dolorum ipsa ullam voluptates consequatur accusantium
+            nemo, architecto perspiciatis dicta qui, vero ea eligendi voluptate, facere veniam illo! Facilis nulla,
+            facere numquam blanditiis et deserunt deleniti ad culpa aliquid assumenda molestiae quam doloribus
+            laboriosam dolores exercitationem ullam sequi. Modi distinctio dolorum beatae? Fugiat itaque nulla officia
+            dignissimos cum, vitae velit molestias quasi eos. Deserunt quod tempora ad suscipit sit iure neque ab ipsam
+            unde vero. Numquam tempore perspiciatis sint? Nam sed laboriosam dolores.
+        </p>
+    </div>
+    <button id="btn">View More</button>
+    <script>
+        let div = document.getElementById('div');
+        let btn = document.getElementById('btn');        
+        btn.addEventListener('click', ()=>{
+            if(btn.innerText == 'View More'){
+                div.style.height = '350px';
+                div.style.width = '600px';
+                btn.innerText = 'View Less';
+                btn.style.fontSize = 'large';
+            }
+            else{
+                div.style.height = '300px';
+                div.style.width = '400px';
+                btn.innerText = 'View More';
+            }
+        })
+    </script>
+</body>
+
+</html>

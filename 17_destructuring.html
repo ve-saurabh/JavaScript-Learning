@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // object destructuring
+        const person = {
+            firstname: "saurabh",
+            lastname: "varma",
+            age:24
+        }
+        // let {firstname, lastname} = person
+        // console.log(firstname, lastname);
+        let {lastname, firstname} = person;
+        console.log(firstname, lastname);
+
+        // array destructuring
+        const arr = ["saurabh", "varma", 24]
+        let [a, b, c] = arr
+        console.log(a, b, c);
+
+        // rest property
+        const numbers = [10,20,30,40,50]
+        let [x,y,...rest] = numbers
+        console.log(x, y, rest);
+
+        function sum(...numbers){
+            return numbers.reduce(
+                (a,b) => a+b
+            )
+        }
+        console.log(sum(10,20,30,40,50));
+
+        // spread property
+        let arr1 = [10,20,30,40,50];
+        let arr2 = [60,70,80,90,100];
+        let arr3 = [...arr1, ...arr2];
+        let arr4 = [...arr2,...arr1];
+        console.log(arr3);
+        console.log(arr4);
+        
+        function fun(u,v,...rest){
+            console.log("u",u);
+            console.log("v",v);
+            console.log("rst",rest);
+        }
+        fun("one","two","three","four","five","six")
+     </script>
+</body>
+</html>
