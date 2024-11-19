@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        array = [1,2,3,4,5,6];
+        // Using Arrow function as callback
+        array.forEach(element => {
+            console.log(element);
+        });
+        // using regular function as callback
+        array.forEach(function(element){
+            console.log(element);
+        })
+
+        array.forEach(function(element, index){
+            console.log(index ,element);
+        })
+
+        // ------------------------------------------------------------------>
+        // Using forEach inside object 
+        const obj = {
+            array:[1,2,3,4,5],
+            printItem: function() {
+                this.array.forEach((element, index)=> {
+                console.log(element, index);
+                })
+            }
+        }
+        obj.printItem();
+
+         // ------------------------------------------------------------------>
+        // printing all three parameters of forEach
+        arr = [1,2,3,4,5];
+        arr.forEach((element, index, array) => {
+            console.log(element,index,array);
+        })
+
+        // ----------------------------------------------------------------------------->
+        const staffDetails = [
+            {name:"Jam josh", age:44, salary:4000, currency:"USD"},
+            {name:"Justina Kap", age:34, salary:4500, currency:"USD"},
+            {name:"Chris patt", age:40, salary:8000, currency:"USD"},
+            {name:"dani daniels", age:35, salary:10000, currency:"USD"},
+        ];
+
+        staffDetails.forEach((element)=> {
+            console.log(element.name);
+        })
+
+        staffDetails.forEach((staffDetail, index)=> {
+            let sentance = `I am ${staffDetail.name} a staff of Royale suits`;
+            console.log(`index ${index}:`, sentance);
+        })
+
+        // ------------------------------------------------------------------------>
+        const a = [12,34,21,53];
+        let total = 0;
+        a.forEach(e => {
+            total += e;
+        })
+        console.log(total);
+        a.forEach(e=> {
+            if (e == 34){
+                console.log(e);
+            }
+        })
+    </script>
+</body>
+</html>
